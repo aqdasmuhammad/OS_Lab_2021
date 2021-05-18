@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int n;                          // size of fibonacci sequence.
-int *fibseq;                    // arry holds the value of each fibonacci term.
-int i;                          // counter for the threads.
+int n;                          
+int *fibseq;                    
+int i;                  
 
 void *runn(void *arg);
 
@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
     {
         printf("format is:./a.out <intgervalue>\n");
         return -1;
-    }                           // valdiate num of args.
+    }                           
 
     if (atoi(argv[1]) < 0)
     {
         printf("%d must be>=0\n", atoi(argv[1]));
         return -1;
-    }                           // valdiate value of arg1.
+    }                         
 
     n = atoi(argv[1]);
     fibseq = (int *)malloc(n * sizeof(int));
@@ -43,9 +43,9 @@ int main(int argc, char *argv[])
     for (k = 0; k < n; k++)
     {
         printf("%d,", fibseq[k]);
-    }                           // End of printing fibseq.
+    }                         
     return 0;
-}                               // End of main.
+}                              
 
 void *runn(void *arg)
 {
@@ -53,13 +53,13 @@ void *runn(void *arg)
     {
         fibseq[i] = 0;
         
-    }                           // first fib term
+    }                         
 
     if (i == 1)
     {  fibseq[i-1]=0;
         fibseq[i] = 1;
        
-    }                           // seconed fib term
+    }
     else
     {
         fibseq[0] = 0;
