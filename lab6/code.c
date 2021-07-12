@@ -134,7 +134,7 @@ uint32_t get_add(uint32_t logical_add) {
         frm_num = page_table[pg_num];
         update_TLB(pg_num, frm_num);
     }
-    physical_add = ((frm_num << 8) | offset);
+    uint32_t physical_add = ((frm_num << 8) | offset);
     return physical_add;
 }
 
